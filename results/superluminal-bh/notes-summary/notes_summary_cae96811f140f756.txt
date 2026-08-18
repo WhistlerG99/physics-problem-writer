@@ -1,0 +1,64 @@
+### Unified Dense Concept Index
+
+#### Maxwell's Equations in Curved Space
+
+- **Maxwell's Equations**: \(\nabla_{\mu} F^{\mu\nu} = \partial_{\mu} F^{\mu\nu} + \Gamma^{\rho}_{\mu\rho} F^{\mu\nu} + \Gamma^{\nu}_{\rho\mu} F^{\mu\rho} = 4 \pi j^{\nu}\)
+- **Field Tensor Components**: \(F^{\mu\nu} = \nabla^{\mu} A^{\nu} - \nabla^{\nu} A^{\mu} = \partial^{\mu} A^{\nu} - \partial^{\nu} A^{\mu}\)
+- **Electric/Magnetic Field Tensor**: \(F_{\mu\nu}\)
+
+#### Covariant Form
+
+- **D'Alembertian Operator**: \(L A_{\nu} = \frac{1}{\sqrt{-g}} \partial_{\mu}(\sqrt{-g} g^{\mu\rho} \partial_{\rho} A_{\nu})\)
+- **Gauge Condition**: \(\nabla_{\mu}A^{\mu} = 0\)
+- **Laplacian in Curved Spacetime**: \(\square A_{\nu} = L A_{\nu} - 2 g^{\mu \rho} \Gamma^{\sigma}_{\rho\nu} \partial_{\mu} A_{\sigma} - \partial_{\nu} (g^{\mu \rho} \Gamma^{\sigma}_{\rho\mu}) A_{\sigma} + g^{\sigma \mu} R_{\mu \nu} A_{\sigma}\)
+
+#### Schwarzschild Space with Stereographic Coordinates
+
+- **Schwarzschild Metric**: \(ds^2 = \left(1 - \frac{2M}{r}\right) dt^2 - \left(1 - \frac{2M}{r}\right)^{-1} dr^2 - r^2 d\theta^2 - r^2 \sin^2\theta d\varphi^2\)
+- **Stereographic Coordinates**: \(z = \frac{\sin \theta e^{i \varphi}}{1 - \cos \theta}, \quad \bar{z} = \frac{\sin \theta e^{-i \varphi}}{1 - \cos \theta}\)
+- **Metric in Stereographic Coordinates**: \(ds^2 = \left(1 - \frac{2M}{r}\right) dt^2 - \left(1 - \frac{2M}{r}\right)^{-1} dr^2 - \frac{4 r^2}{(1 + z \bar{z})^2} dz d\bar{z}\)
+
+#### Examples: Gauge Fixing
+
+- **Fixing Gauge**: \(A_0 = 0\)
+- **Gauge-Fixed Field Equations**: Derived for components in stereographic coordinates.
+
+#### From Vector to Scalar Equations
+
+- **Define Potential as Scalar Solutions**: \(\Phi\), \(\Psi\)
+- **Radial Solutions**: \( r^{*} = r + 2M \log \left| \frac{r}{2M} - 1 \right| \)
+- **Mode Expansions**: Using spherical harmonics \(Y_l^m(\theta, \varphi)\)
+
+#### Quantum Corrections to Maxwell's Equations
+
+- **Corrected Maxwell's Equations**: \(\nabla_{\mu}F^{\mu\nu} + \xi^2 R^{\mu\nu}_{\sigma\tau} \nabla_{\mu} F^{\sigma\tau} = 0\)
+- **Curvature Tensor**: \(R^{\mu\nu}_{\sigma\tau} = \frac{M}{r^3} \left(1 - 3 (\delta^{\mu}_{0}\delta^{\nu}_{1} + \delta^{\mu}_{1}\delta^{\nu}_{0} + \delta^{\mu}_{2}\delta^{\nu}_{3} + \delta^{\mu}_{3}\delta^{\nu}_{2})\right)(\delta^{\mu}_{\sigma} \delta^{\nu}_{\tau} - \delta^{\mu}_{\tau} \delta^{\nu}_{\sigma})\)
+
+#### Equations of Motion and Gauge Fixing
+
+- **Quantum Corrected Field Equations**: For vector potential \(\nu=0, 1, 2, 3\)
+- **Gauge Fixing Condition**: \(A_{t} = 0\)
+- **Transformation Equation**: Relating radial derivatives and field components.
+
+#### Specific Solutions and WKB Approximation
+
+- **Quantities and Symbols**: \(A_{r}, A_{z}\), \(A_{\bar{z}}\), \(\Phi\), \(\Psi\), \(M\), \(\xi\)
+- **Key Equations**:
+  - Potential Solutions: 
+    - \(A_{r} = 0, \; A_{z} = \partial_{z} \Phi, \; A_{\bar{z}} = - \partial_{\bar{z}} \Phi\)
+    - \(\partial^{2}_{t} \Phi - q(r) \partial_{r}(p(r) \partial_{r} \Phi) = -\frac{l(l+1)}{r^{2}} q(r) H(r) \Phi\)
+  - WKB Ansatz for Solutions: 
+    - \(\Phi(r,t) = A(r) e^{i \phi(r) - i \omega t} Y_{l}^{m}(\theta, \varphi)\)
+
+#### Transmission and Absorption
+
+- **Transmission Amplitude**: \(T_{l} (\omega) = 1\) if \( l < l_{c} \); \(T_{l} (\omega) = 0\) if \( l > l_{c} \)
+- **Absorption Cross Section**:
+  - \(\sigma_{abs} = \frac{\pi}{2 \omega^2}(\sqrt{1 + 108 \omega^2 M^2} -1 + 54 \omega^2 M^2) \approx 54 \pi M^2 - 729 \pi \omega^2 M^4\)
+
+#### Variables & Symbols
+
+- Physical Constants and Coordinates: \(M, \xi, r, z, \bar{z}\)
+- Fields and Potentials: \(A_{r}, A_{z}, A_{\bar{z}}, \Phi, \Psi\)
+- Angular Momentum and Frequency: \(l, l_c, \omega\)
+- **Spherical Harmonics**: \(Y_{l}^{m}(\theta, \varphi)\)

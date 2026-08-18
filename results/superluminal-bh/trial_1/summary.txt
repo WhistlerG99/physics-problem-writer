@@ -1,0 +1,13 @@
+╔══════════════════════════════════════════════════════════════╗
+║           PHYSICS TUTOR — SESSION SUMMARY                    ║
+╚══════════════════════════════════════════════════════════════╝
+Stopped because : problem stumped enough students (0 ≤ 1 correct out of 5)
+Total rounds    : 1
+Writer model    : gpt-4o
+Student model   : gpt-4o
+Students        : 5
+Stop threshold  : ≤ 1 correct
+
+  Round  1  ans=     4  ✗✗✗✗✗  correct=0
+           Consider a scalar field in a Schwarzschild background using stereographic c…
+

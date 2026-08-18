@@ -1,0 +1,3210 @@
+\documentclass[12pt]{article}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{epstopdf}
+\usepackage{bm}
+%\usepackage{feynmf}
+\usepackage[pdftex,colorlinks,urlcolor=blue]{hyperref}
+\pagestyle{plain}
+%\usepackage{mcite}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1
+.tif`.png} \textwidth = 6.5 in \textheight = 9 in \oddsidemargin =
+0.0 in \evensidemargin = 0.0 in \topmargin = 0.0 in \headheight =
+0.0 in \headsep = 0.0 in
+\parskip = 0.1in
+\parindent = 0.1in
+\linespread{1.0}
+\def\ba{\begin{eqnarray}}
+\def\ea{\end{eqnarray}}
+\def\nn{\nonumber}
+\def\L{\mathcal{L}}
+\def\H{\mathcal{H}}
+\def\M{\mathcal{M}}
+\def\N{\mathcal{N}}
+\def\P{\mathcal{P}}
+\def\R{\mathcal{R}}
+\def\O{\mathcal{O}}
+\def\q{\mathbf{q}}
+\def\D{\mathcal{D}}
+\def\V{\mathcal{V}}
+\def\:{\boldsymbol{:}}
+\def\B{\boldsymbol{B}}
+\def\Bbeta{\boldsymbol{\beta}}
+\def\x{\mathbf{x}}
+\def\u{\mathbf{u}}
+\def\y{\mathbf{y}}
+\def\p{\mathbf{p}}
+\def\v{\mathbf{v}}
+\def\n{\hat{\mathbf{n}}}
+\def\dk#1{\stackrel{\circ}{#1}}
+\def\ddk#1{\stackrel{\circ \circ}{#1}}
+\def\dkt#1{\stackrel{\bullet}{#1}}
+\def\k{\mathbf{k}}
+\def\F{\mathcal{F}}
+\def\Tr{\textrm{Tr}}
+\def\Vol{\textrm{Vol}}
+\def\slash{\makebox[0cm][l]{/}}
+\long\def\symbolfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+
+
+\begin{document}
+
+
+
+
+\begin{flushright}
+Chris Gauthier
+\today
+\end{flushright}
+\begin{center} 
+\vglue .06in
+{\Large \bf {$U(1)$ Gauge Field Around a Black Hole}}\\[.5in]
+
+\end{center}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\section{Quantum Corrections to Maxwell's Equations}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The type of corrections to the maxwell equations we will investigate is
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\nabla_{\mu}F^{\mu\nu}
++
+\xi^{2}
+R^{\mu\nu}_{\,\,\,\,\,\,\, \sigma \tau}
+\nabla_{\mu}
+F^{\sigma \tau}
+=0
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+In Schwarzschild space the curvature tensor is
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+R^{\mu\nu}_{\,\,\,\,\,\,\, \sigma \tau}
+=
+\frac{M}{r^{3}}
+\left(
+1
+-
+3 (\delta^{\mu}_{0}\delta^{\nu}_{1} + \delta^{\mu}_{1}\delta^{\nu}_{0} + \delta^{\mu}_{2}\delta^{\nu}_{3} + \delta^{\mu}_{3}\delta^{\nu}_{2})
+\right)
+(\delta^{\mu}_{\sigma} \delta^{\nu}_{\tau} - \delta^{\mu}_{\tau} \delta^{\nu}_{\sigma})
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\nabla_{\mu}
+F^{\sigma \tau}
+=
+\nabla_{\mu} (g^{\sigma \lambda} g^{\tau \rho} (\nabla_{\lambda}A_{\rho} - \nabla_{\rho}A_{\lambda}))
+=
+g^{\sigma \lambda} g^{\tau \rho} 
+\left[
+\nabla_{\mu} \nabla_{\lambda}A_{\rho} 
+- 
+\nabla_{\mu} \nabla_{\rho}A_{\lambda}
+\right]
+\nn \\
+=
+g^{\sigma \lambda} g^{\tau \rho} 
+\left[
+\partial_{\mu} \nabla_{\lambda}A_{\rho} 
+-
+\Gamma_{\lambda \mu}^{\omega} \nabla_{\omega}A_{\rho} 
+-
+\Gamma_{\rho \mu}^{\omega} \nabla_{\lambda}A_{ \omega} 
+- 
+\partial_{\mu} \nabla_{\rho}A_{\lambda} 
++
+\Gamma_{\rho \mu}^{\omega} \nabla_{\omega}A_{\lambda} 
++
+\Gamma_{\lambda \mu}^{\omega} \nabla_{\rho}A_{ \omega} 
+\right]
+\nn \\
+=
+g^{\sigma \lambda} g^{\tau \rho} 
+\left[
+\partial_{\mu} 
+(\partial_{\lambda}A_{\rho} - \Gamma_{\rho \lambda}^{\sigma} A_{\sigma})
+-
+\Gamma_{\lambda \mu}^{\omega}
+(\partial_{\omega} A_{\rho} - \Gamma_{\rho \omega}^{\sigma} A_{\sigma})
+-
+\Gamma_{\rho \mu}^{\omega}
+(\partial_{\lambda} A_{\omega} - \Gamma_{\omega \lambda}^{\sigma} A_{\sigma})
+\right.
+\nn \\
+\left.
+- 
+\partial_{\mu}
+(\partial_{\rho}A_{\lambda} - \Gamma_{\lambda \rho}^{\sigma} A_{\sigma})
++
+\Gamma_{\rho \mu}^{\omega}
+(\partial_{\omega} A_{\lambda} - \Gamma_{\lambda \omega}^{\sigma} A_{\sigma})
++
+\Gamma_{\lambda \mu}^{\omega}
+(\partial_{\rho} A_{\omega} - \Gamma_{\omega \rho}^{\sigma} A_{\sigma})
+\right]
+\nn \\
+=
+g^{\sigma \lambda} g^{\tau \rho} 
+\left[
+\partial_{\mu} \partial_{\lambda}A_{\rho}
+-
+\Gamma_{\lambda \mu}^{\omega} \partial_{\omega} A_{\rho}
+-
+\Gamma_{\rho \mu}^{\omega}\partial_{\lambda} A_{\omega}
+- 
+\partial_{\mu} \partial_{\rho}A_{\lambda}
++
+\Gamma_{\rho \mu}^{\omega}
+\partial_{\omega} A_{\lambda}
++
+\Gamma_{\lambda \mu}^{\omega}
+\partial_{\rho} A_{\omega} 
+\right]
+\nn \\
+=
+g^{\sigma \lambda} g^{\tau \rho} 
+\left[
+\partial_{\mu} 
+(\partial_{\lambda}A_{\rho}
+-
+\partial_{\rho}A_{\lambda})
+-
+\Gamma_{\lambda \mu}^{\omega} 
+(\partial_{\omega} A_{\rho}
+-
+\partial_{\rho} A_{\omega})
+-
+\Gamma_{\rho \mu}^{\omega}
+(\partial_{\lambda} A_{\omega}
+-
+\partial_{\omega} A_{\lambda})
+\right]
+\end{gather}
+
+
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+(\delta^{\mu}_{\sigma} \delta^{\nu}_{\tau} - \delta^{\mu}_{\tau} \delta^{\nu}_{\sigma})
+\nabla_{\mu}
+F^{\sigma \tau}
+\nn \\
+=
+g^{\mu \lambda} g^{\nu \rho} 
+\left[
+\partial_{\mu} 
+(\partial_{\lambda}A_{\rho}
+-
+\partial_{\rho}A_{\lambda})
+-
+\Gamma_{\lambda \mu}^{\omega} 
+(\partial_{\omega} A_{\rho}
+-
+\partial_{\rho} A_{\omega})
+-
+\Gamma_{\rho \mu}^{\omega}
+(\partial_{\lambda} A_{\omega}
+-
+\partial_{\omega} A_{\lambda})
+\right]
+\nn \\
+-
+g^{\nu \lambda} g^{\mu \rho} 
+\left[
+\partial_{\mu} 
+(\partial_{\lambda}A_{\rho}
+-
+\partial_{\rho}A_{\lambda})
+-
+\Gamma_{\lambda \mu}^{\omega} 
+(\partial_{\omega} A_{\rho}
+-
+\partial_{\rho} A_{\omega})
+-
+\Gamma_{\rho \mu}^{\omega}
+(\partial_{\lambda} A_{\omega}
+-
+\partial_{\omega} A_{\lambda})
+\right]
+\nn \\
+=
+g^{\mu \lambda} g^{\nu \rho} 
+\left[
+\partial_{\mu} 
+(\partial_{\lambda}A_{\rho}
+-
+\partial_{\rho}A_{\lambda})
+-
+\Gamma_{\lambda \mu}^{\omega} 
+(\partial_{\omega} A_{\rho}
+-
+\partial_{\rho} A_{\omega})
+-
+\Gamma_{\rho \mu}^{\omega}
+(\partial_{\lambda} A_{\omega}
+-
+\partial_{\omega} A_{\lambda})
+\right]
+\nn \\
+-
+g^{\nu \rho} g^{\mu \lambda} 
+\left[
+\partial_{\mu} 
+(\partial_{\rho}A_{\lambda}
+-
+\partial_{\lambda}A_{\rho})
+-
+\Gamma_{\rho \mu}^{\omega} 
+(\partial_{\omega} A_{\lambda}
+-
+\partial_{\lambda} A_{\omega})
+-
+\Gamma_{\lambda \mu}^{\omega}
+(\partial_{\rho} A_{\omega}
+-
+\partial_{\omega} A_{\rho})
+\right]
+\nn \\
+=
+g^{\mu \lambda} g^{\nu \rho} 
+\left[
+\partial_{\mu} 
+(\partial_{\lambda}A_{\rho}
+-
+\partial_{\rho}A_{\lambda})
+-
+\Gamma_{\lambda \mu}^{\omega} 
+(\partial_{\omega} A_{\rho}
+-
+\partial_{\rho} A_{\omega})
+-
+\Gamma_{\rho \mu}^{\omega}
+(\partial_{\lambda} A_{\omega}
+-
+\partial_{\omega} A_{\lambda})
+\right]
+\nn \\
++
+g^{\nu \rho} g^{\mu \lambda} 
+\left[
+\partial_{\mu} 
+(
+\partial_{\lambda}A_{\rho}
+-
+\partial_{\rho}A_{\lambda})
+-
+\Gamma_{\rho \mu}^{\omega} 
+(\partial_{\lambda} A_{\omega}
+-
+\partial_{\omega} A_{\lambda})
+-
+\Gamma_{\lambda \mu}^{\omega}
+(\partial_{\omega} A_{\rho}
+-
+\partial_{\rho} A_{\omega})
+\right]
+\nn \\
+=
+2
+g^{\mu \lambda} g^{\nu \rho} 
+\left[
+\partial_{\mu} 
+(\partial_{\lambda}A_{\rho}
+-
+\partial_{\rho}A_{\lambda})
+-
+\Gamma_{\lambda \mu}^{\omega} 
+(\partial_{\omega} A_{\rho}
+-
+\partial_{\rho} A_{\omega})
+-
+\Gamma_{\rho \mu}^{\omega}
+(\partial_{\lambda} A_{\omega}
+-
+\partial_{\omega} A_{\lambda})
+\right]
+\nn \\
+=
+2
+g^{\mu \lambda} g^{\nu \rho} 
+\left[
+L
+A_{\rho}
+-
+\partial_{\mu} 
+\partial_{\rho}A_{\lambda})
+-
+\Gamma_{\lambda \mu}^{\omega} 
+(-
+\partial_{\rho} A_{\omega})
+-
+\Gamma_{\rho \mu}^{\omega}
+(\partial_{\lambda} A_{\omega}
+-
+\partial_{\omega} A_{\lambda})
+\right]
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+This is just
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+(\delta^{\mu}_{\sigma} \delta^{\nu}_{\tau} - \delta^{\mu}_{\tau} \delta^{\nu}_{\sigma})
+\nabla_{\mu}
+F^{\sigma \tau}
+=
+\nabla_{\mu}
+F^{\mu \nu}
+-
+\nabla_{\mu}
+F^{\nu \mu}
+=
+2
+\nabla_{\mu}
+F^{\mu \nu}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+(1 + \frac{2 \xi^{2} M}{r^{3}} (1 - 3 (\delta^{\mu}_{0}\delta^{\nu}_{1} + \delta^{\mu}_{1}\delta^{\nu}_{0} + \delta^{\mu}_{2}\delta^{\nu}_{3} + \delta^{\mu}_{3}\delta^{\nu}_{2})))
+\nabla_{\mu}F^{\mu\nu}
+\nn \\
+=
+(1 + \frac{2 \xi^{2} M}{r^{3}} )
+\nabla_{\mu}F^{\mu\nu}
+-
+\frac{6 \xi^{2} M}{r^{3}} (\delta^{\mu}_{0}\delta^{\nu}_{1} + \delta^{\mu}_{1}\delta^{\nu}_{0} + \delta^{\mu}_{2}\delta^{\nu}_{3} + \delta^{\mu}_{3}\delta^{\nu}_{2})
+\nabla_{\mu}F^{\mu\nu}
+\nn \\
+=
+(1 + \frac{2 \xi^{2} M}{r^{3}} )
+\nabla_{\mu}F^{\mu\nu}
+-
+\frac{6 \xi^{2} M}{r^{3}} 
+(
+\delta_{1}^{\nu}
+\nabla_{0}F^{0 1}
++ 
+\delta_{0}^{\nu}
+\nabla_{1}F^{1 0}
++ 
+\delta_{3}^{\nu}
+\nabla_{2}F^{2 3}
++ 
+\delta_{2}^{\nu}
+\nabla_{3}F^{3 2})
+\nn \\
+=
+(1 + \frac{2 \xi^{2} M}{r^{3}} )
+\nabla_{\mu}F^{\mu\nu}
++
+\frac{6 \xi^{2} M}{r^{3}} 
+(
+\delta_{0}^{\nu}
+\nabla_{1}F^{0 1}
+-
+\delta_{1}^{\nu}
+\nabla_{0}F^{0 1}
++
+\delta_{2}^{\nu}
+\nabla_{3}F^{2 3}
+- 
+\delta_{3}^{\nu}
+\nabla_{2}F^{2 3}
+)
+=0
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The covariant version is
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+(1 + \frac{2 \xi^{2} M}{r^{3}} )
+g^{\lambda \mu}
+\nabla_{\lambda}F_{\mu \nu}
++
+\frac{6 \xi^{2} M}{r^{3}} 
+g_{\nu \lambda}
+(
+\delta_{0}^{\lambda}
+\nabla_{1}F^{0 1}
+-
+\delta_{1}^{\lambda}
+\nabla_{0}F^{0 1}
++
+\delta_{2}^{\lambda}
+\nabla_{3}F^{2 3}
+- 
+\delta_{3}^{\lambda}
+\nabla_{2}F^{2 3}
+)
+=0
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The quantity $\nabla_{1} F^{01}$ is
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\nabla_{1}F^{01}
+=
+g^{0 \lambda} g^{1 \rho}
+\left[
+\partial_{1} 
+(\partial_{\lambda}A_{\rho}
+-
+\partial_{\rho}A_{\lambda})
+-
+\Gamma_{\lambda 1}^{\omega} 
+(\partial_{\omega} A_{\rho}
+-
+\partial_{\rho} A_{\omega})
+-
+\Gamma_{\rho 1}^{\omega}
+(\partial_{\lambda} A_{\omega}
+-
+\partial_{\omega} A_{\lambda})
+\right]
+\nn \\
+=
+g^{00} g^{11}
+\left[
+\partial_{1} 
+(\partial_{0}A_{1}
+-
+\partial_{1}A_{0})
+-
+\Gamma_{01}^{\omega} 
+(\partial_{\omega} A_{1}
+-
+\partial_{1} A_{\omega})
+-
+\Gamma_{11}^{\omega}
+(\partial_{0} A_{\omega}
+-
+\partial_{\omega} A_{0})
+\right]
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Note that
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\Gamma^{\omega}_{01}
+=
+\left\{
+\frac{M}{r^{2} (1 - \frac{2 M}{r})}
+,0,0,0
+\right\}
+,
+\qquad
+\Gamma^{\omega}_{11}
+=
+\left\{
+0,-\frac{M}{r^{2} (1 - \frac{2 M}{r})},0,0
+\right\}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Thus
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\nabla_{1}F^{01}
+=
+g^{00} g^{11}
+\left[
+\partial_{1} 
+(\partial_{0}A_{1}
+-
+\partial_{1}A_{0})
+-
+\frac{M}{r^{2} (1 - \frac{2 M}{r})}
+(\partial_{0} A_{1}
+-
+\partial_{1} A_{0})
++
+\frac{M}{r^{2} (1 - \frac{2 M}{r})}
+(\partial_{0} A_{1}
+-
+\partial_{1} A_{0})
+\right]
+\nn \\
+=
+g^{00} g^{11}
+(
+\partial_{1} 
+\partial_{0}A_{1}
+-
+\partial_{1}^{2}A_{0})
+=
+\partial_{r}^{2}A_{t}
+-
+\partial_{r} 
+\partial_{t}A_{r}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The quantity $\nabla_{0} F^{01}$ is
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\nabla_{0}F^{01}
+=
+g^{0\lambda} g^{1\rho}
+\left[
+\partial_{0} 
+(\partial_{\lambda}A_{\rho}
+-
+\partial_{\rho}A_{\lambda})
+-
+\Gamma_{\lambda 0}^{\omega} 
+(\partial_{\omega} A_{\rho}
+-
+\partial_{\rho} A_{\omega})
+-
+\Gamma_{\rho 0}^{\omega}
+(\partial_{\lambda} A_{\omega}
+-
+\partial_{\omega} A_{\lambda})
+\right]
+\nn \\
+=
+g^{00} g^{11}
+\left[
+\partial_{0} 
+(\partial_{0}A_{1}
+-
+\partial_{1}A_{0})
+-
+\Gamma_{00}^{\omega} 
+(\partial_{\omega} A_{1}
+-
+\partial_{1} A_{\omega})
+-
+\Gamma_{10}^{\omega}
+(\partial_{0} A_{\omega}
+-
+\partial_{\omega} A_{0})
+\right]
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\Gamma^{\omega}_{00}
+=
+\left\{
+0,\frac{M}{r^{2}} (1 - \frac{2 M}{r}) ,0,0
+\right\}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Thus 
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\nabla_{0}F^{01}
+=
+g^{00} g^{11}
+\left[
+\partial_{0} 
+(\partial_{0}A_{1}
+-
+\partial_{1}A_{0})
+-
+\Gamma_{00}^{1} 
+(\partial_{1} A_{1}
+-
+\partial_{1} A_{1})
+-
+\Gamma_{1 0}^{0}
+(\partial_{0} A_{0}
+-
+\partial_{0} A_{0})
+\right]
+\nn \\
+=
+-
+\partial_{0} 
+(\partial_{0}A_{1}
+-
+\partial_{1}A_{0})
+=
+\partial_{t}\partial_{r}A_{t}
+-
+\partial_{t}^{2}A_{r}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The quantity $\nabla_{3} F^{23}$ is
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\nabla_{3}F^{23}
+=
+g^{2 \lambda} g^{3 \rho}
+\left[
+\partial_{3} 
+(\partial_{\lambda}A_{\rho}
+-
+\partial_{\rho}A_{\lambda})
+-
+\Gamma_{\lambda 3}^{\omega} 
+(\partial_{\omega} A_{\rho}
+-
+\partial_{\rho} A_{\omega})
+-
+\Gamma_{\rho 3}^{\omega}
+(\partial_{\lambda} A_{\omega}
+-
+\partial_{\omega} A_{\lambda})
+\right]
+\nn \\
+=
+g^{23} g^{32}
+\left[
+\partial_{3} 
+(\partial_{3}A_{2}
+-
+\partial_{2}A_{3})
+-
+\Gamma_{33}^{\omega} 
+(\partial_{\omega} A_{2}
+-
+\partial_{2} A_{\omega})
+-
+\Gamma_{23}^{\omega}
+(\partial_{3} A_{\omega}
+-
+\partial_{\omega} A_{3})
+\right]
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Note that
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\Gamma^{\omega}_{23}
+=
+\left\{
+0,- \frac{2 r (1 - \frac{2 M}{r})}{(1 + z \bar{z})^{2}},0,0
+\right\}
+,
+\qquad
+\Gamma^{\omega}_{33}
+=
+\left\{
+0,0,0,-\frac{2 z}{1 + z \bar{z}}
+\right\}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Thus
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\nabla_{3}F^{23}
+=
+\frac{(1 + z \bar{z})^{4}}{4 r^{4}}
+\left[
+\partial_{3}^{2}A_{2}
+-
+\partial_{3} \partial_{2}A_{3}
++
+\frac{2 z}{1 + z \bar{z}}
+(\partial_{3} A_{2}
+-
+\partial_{2} A_{3})
++
+\frac{2 r (1 - \frac{2 M}{r})}{(1 + z \bar{z})^{2}}
+(\partial_{3} A_{1}
+-
+\partial_{1} A_{3})
+\right]
+\nn \\
+=
+\frac{(1 + z \bar{z})^{4}}{4 r^{4}}
+\left[
+\partial_{\bar{z}}^{2}A_{z}
+-
+\partial_{\bar{z}} \partial_{z} A_{\bar{z}}
++
+\frac{2 z}{1 + z \bar{z}}
+(\partial_{\bar{z}} A_{z}
+-
+\partial_{z} A_{\bar{z}})
++
+\frac{2 r (1 - \frac{2 M}{r})}{(1 + z \bar{z})^{2}}
+(\partial_{\bar{z}} A_{r}
+-
+\partial_{r} A_{\bar{z}})
+\right]
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The quantity $\nabla_{2} F^{23}$ is
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\nabla_{2}F^{23}
+=
+g^{2 \lambda} g^{3 \rho}
+\left[
+\partial_{2} 
+(\partial_{\lambda}A_{\rho}
+-
+\partial_{\rho}A_{\lambda})
+-
+\Gamma_{\lambda 2}^{\omega} 
+(\partial_{\omega} A_{\rho}
+-
+\partial_{\rho} A_{\omega})
+-
+\Gamma_{\rho 2}^{\omega}
+(\partial_{\lambda} A_{\omega}
+-
+\partial_{\omega} A_{\lambda})
+\right]
+\nn \\
+=
+g^{23} g^{32}
+\left[
+\partial_{2} 
+(\partial_{3}A_{2}
+-
+\partial_{2}A_{3})
+-
+\Gamma_{3 2}^{\omega} 
+(\partial_{\omega} A_{2}
+-
+\partial_{2} A_{\omega})
+-
+\Gamma_{22}^{\omega}
+(\partial_{3} A_{\omega}
+-
+\partial_{\omega} A_{3})
+\right]
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Note that
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\Gamma^{\omega}_{22}
+=
+\left\{
+0,0,-\frac{2 \bar{z}}{1 + z \bar{z}},0
+\right\}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Thus
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\nabla_{2}F^{23}
+=
+\frac{(1 + z \bar{z})^{4}}{4 r^{4}}
+\left[
+\partial_{2} \partial_{3}A_{2}
+-
+\partial_{2}^{2}A_{3}
++
+\frac{2 r (1 - \frac{2 M}{r})}{(1 + z \bar{z})^{2}}
+(\partial_{1} A_{2}
+-
+\partial_{2} A_{1})
++
+\frac{2 \bar{z}}{1 + z \bar{z}}
+(\partial_{3} A_{2}
+-
+\partial_{2} A_{3})
+\right]
+\nn \\
+=
+-
+\frac{(1 + z \bar{z})^{4}}{4 r^{4}}
+\left[
+\partial_{z}^{2}A_{\bar{z}}
+-
+\partial_{z} \partial_{\bar{z}} A_{z}
++
+\frac{2 \bar{z}}{1 + z \bar{z}}
+(\partial_{z} A_{\bar{z}}
+-
+\partial_{\bar{z}} A_{z})
++
+\frac{2 r (1 - \frac{2 M}{r})}{(1 + z \bar{z})^{2}}
+(\partial_{z} A_{r}
+-
+\partial_{r} A_{z})
+\right]
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\subsection{Equations of Motion}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The equation of motion for the $\nu=0$ component of the covariant vector potential is
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+(1 + \frac{2 \xi^{2} M}{r^{3}} )
+g^{\lambda \mu}
+\nabla_{\lambda}F_{\mu 0}
++
+\frac{6 \xi^{2} M}{r^{3}} 
+g_{0 \lambda}
+\delta_{0}^{\lambda}
+\nabla_{1}F^{0 1}
+=0
+\nn \\
+\Rightarrow
+\quad
+LA_{t} 
+-
+\frac{2 M}{r^{2}}
+(\partial_{t} A_{r} - \partial_{r} A_{t})
+-
+\partial_{t}
+\nabla_{\mu}
+A^{\mu}
+=
+-
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(1 - \frac{2 M}{r})
+(\partial_{r}^{2} A_{t} - \partial_{r} \partial_{t} A_{r})
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+For the $\nu=1$ component the equation of motion is
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+(1 + \frac{2 \xi^{2} M}{r^{3}} )
+g^{\lambda \mu}
+\nabla_{\lambda}F_{\mu 1}
+-
+\frac{6 \xi^{2} M}{r^{3}} 
+g_{1 \lambda}
+\delta_{1}^{\lambda}
+\nabla_{0}F^{0 1}
+=0
+\nn \\
+\Rightarrow
+\quad
+L A_{r} 
+-
+\frac{2 M}{r^{2} (1 - \frac{2 M}{r})^{2}}
+\partial_{t} A_{t}
+-
+\frac{2 M}{r^{2}}
+\partial_{r} A_{r}
++
+\frac{(1 + z \bar{z})^{2}}{r^{3}}
+(\partial_{z} A_{\bar{z}} + \partial_{\bar{z}} A_{z})
+\nn \\
++
+\frac{2}{r^{2}}
+(1 - \frac{2 M}{r})
+A_{r}
+-
+\partial_{r}
+\nabla_{\mu}
+A^{\mu}
+=
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(1 - \frac{2 M}{r})^{-1}
+(\partial_{t}^{2} A_{r} - \partial_{t} \partial_{r} A_{t})
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+For the $\nu=2$ component the equation of motion is
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+(1 + \frac{2 \xi^{2} M}{r^{3}} )
+g^{\lambda \mu}
+\nabla_{\lambda}F_{\mu 2}
+-
+\frac{6 \xi^{2} M}{r^{3}} 
+g_{2 \lambda}
+\delta_{3}^{\lambda}
+\nabla_{2}F^{2 3}
+=0
+\nn \\
+\Rightarrow
+\quad
+L A_{z} 
++
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+(\partial_{r} A_{z} - \partial_{z} A_{r})
+-
+\frac{2 \bar{z} (1 + z \bar{z})}{r^{2}}
+\partial_{\bar{z}}
+A_{z}
+-
+\partial_{z}
+\nabla_{\mu}
+A^{\mu}
+\nn \\
+=
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{(1 + z \bar{z})^{2}}{2 r^{2}}
+\left[
+\partial_{z}^{2}A_{\bar{z}}
+-
+\partial_{z} \partial_{\bar{z}} A_{z}
++
+\frac{2 \bar{z}}{1 + z \bar{z}}
+(\partial_{z} A_{\bar{z}}
+-
+\partial_{\bar{z}} A_{z})
++
+\frac{2 r (1 - \frac{2 M}{r})}{(1 + z \bar{z})^{2}}
+(\partial_{z} A_{r}
+-
+\partial_{r} A_{z})
+\right]
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+And finally, for the $\nu=3$ component the equation of motion is
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+(1 + \frac{2 \xi^{2} M}{r^{3}} )
+g^{\lambda \mu}
+\nabla_{\lambda}F_{\mu 3}
++
+\frac{6 \xi^{2} M}{r^{3}} 
+g_{3 \lambda}
+\delta_{2}^{\lambda}
+\nabla_{3}F^{2 3}
+=0
+\nn \\
+\Rightarrow
+\quad
+L A_{\bar{z}} 
++
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+(\partial_{r} A_{\bar{z}} - \partial_{\bar{z}} A_{r})
+-
+\frac{2 z (1 + z \bar{z})}{r^{2}}
+\partial_{z}
+A_{\bar{z}}
+-
+\partial_{\bar{z}}
+\nabla_{\mu}
+A^{\mu}
+\nn \\
+=
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{(1 + z \bar{z})^{2}}{2 r^{2}}
+\left[
+\partial_{\bar{z}}^{2}A_{z}
+-
+\partial_{\bar{z}} \partial_{z} A_{\bar{z}}
++
+\frac{2 z}{1 + z \bar{z}}
+(\partial_{\bar{z}} A_{z}
+-
+\partial_{z} A_{\bar{z}})
++
+\frac{2 r (1 - \frac{2 M}{r})}{(1 + z \bar{z})^{2}}
+(\partial_{\bar{z}} A_{r}
+-
+\partial_{r} A_{\bar{z}})
+\right]
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\subsection{Gauge Fixing}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Let us choose the gauge $A_{t} =0$. The quantity $\nabla_{\mu} A^{\mu}$ becomes
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\nabla_{\mu}A^{\mu}
+=
+-
+\frac{1}{r^{2}}
+(1 - \frac{2 M}{r})
+\partial_{r}(r^{2} A_{r})
+-
+\frac{2 M}{r^{2}}
+A_{r}
+-
+\frac{(1 + z \bar{z})^{2}}{2 r^{2}}
+(\partial_{z} A_{\bar{z}} + \partial_{\bar{z}} A_{z})
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The constraint becomes
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+-
+\frac{2 M}{r^{2}}
+\partial_{t} A_{r}
+-
+\partial_{t}
+\nabla_{\mu}
+A^{\mu}
+=
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(1 - \frac{2 M}{r})
+\partial_{r} \partial_{t} A_{r}
+\nn \\
+\Rightarrow
+\quad
+\partial_{t} 
+\left[
+\nabla_{\mu}
+A^{\mu}
++
+\frac{2 M}{r^{2}}A_{r}
++
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(1 - \frac{2 M}{r})
+\partial_{r} A_{r}
+\right]=0
+\nn \\
+\Rightarrow
+\quad
+\nabla_{\mu}
+A^{\mu}
++
+\frac{2 M}{r^{2}}A_{r}
++
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(1 - \frac{2 M}{r})
+\partial_{r} A_{r}
+=0
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Combining 
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(1 - \frac{2 M}{r})
+\partial_{r} A_{r}
+=
+\frac{1}{r^{2}}
+(1 - \frac{2 M}{r})
+\partial_{r}(r^{2} A_{r})
++
+\frac{(1 + z \bar{z})^{2}}{2 r^{2}}
+(\partial_{z} A_{\bar{z}} + \partial_{\bar{z}} A_{z})
+\nn \\
+\Rightarrow
+\quad
+- r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})
+\partial_{r} A_{r}
+=
+2 r
+(1 + \frac{2 \xi^{2} M}{r^{3}})
+A_{r}
++
+\frac{(1 + z \bar{z})^{2}}{2 (1 - \frac{2 M}{r})}
+(1 + \frac{2 \xi^{2} M}{r^{3}})
+(\partial_{z} A_{\bar{z}} + \partial_{\bar{z}} A_{z})
+\nn \\
+\Rightarrow
+\quad
+- r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})
+\partial_{r} A_{r}
+=
+\partial_{r}
+\left[
+r^{2}
+(1 - \frac{4 \xi^{2} M}{r^{3}})
+\right]
+A_{r}
++
+\frac{(1 + z \bar{z})^{2}}{2 (1 - \frac{2 M}{r})}
+(1 + \frac{2 \xi^{2} M}{r^{3}})
+(\partial_{z} A_{\bar{z}} + \partial_{\bar{z}} A_{z})
+\nn \\
+\Rightarrow
+\quad
+\partial_{r}
+\left[
+r^{2}
+(1 - \frac{4 \xi^{2} M}{r^{3}})
+A_{r}
+\right]
++
+\frac{(1 + z \bar{z})^{2}}{2 (1 - \frac{2 M}{r})}
+(1 + \frac{2 \xi^{2} M}{r^{3}})
+(\partial_{z} A_{\bar{z}} + \partial_{\bar{z}} A_{z})
+=0
+\nn \\
+\Rightarrow
+\quad
+\frac{1}{(1 + \frac{2 \xi^{2} M}{r^{3}})}
+\partial_{r}
+\left[
+r^{2}
+(1 - \frac{4 \xi^{2} M}{r^{3}})
+A_{r}
+\right]
+=
+-\frac{(1 + z \bar{z})^{2}}{2 (1 - \frac{2 M}{r})}
+(\partial_{z} A_{\bar{z}} + \partial_{\bar{z}} A_{z})
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Let's look at the $A_{r}$ equation of motion
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+L A_{r} 
+-
+\frac{2 M}{r^{2}}
+\partial_{r} A_{r}
++
+\frac{(1 + z \bar{z})^{2}}{r^{3}}
+(\partial_{z} A_{\bar{z}} + \partial_{\bar{z}} A_{z})
+\nn \\
++
+\frac{2}{r^{2}}
+(1 - \frac{2 M}{r})
+A_{r}
+-
+\partial_{r}
+\nabla_{\mu}
+A^{\mu}
+=
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(1 - \frac{2 M}{r})^{-1}
+\partial_{t}^{2} A_{r} 
+\nn \\
+\Rightarrow
+\quad
+L A_{r} 
+-
+\frac{2 M}{r^{2}}
+\partial_{r} A_{r}
+-
+\frac{2 (1 - \frac{2 M}{r})}{r^{3} (1 + \frac{2 \xi^{2} M}{r^{3}})}
+\partial_{r}
+\left[
+r^{2}
+(1 - \frac{4 \xi^{2} M}{r^{3}})
+A_{r}
+\right]
+\nn \\
++
+\frac{2}{r^{2}}
+(1 - \frac{2 M}{r})
+A_{r}
++
+\partial_{r}
+\left(
+\frac{2 M}{r^{2}}A_{r}
++
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(1 - \frac{2 M}{r})
+\partial_{r} A_{r}
+\right)
+=
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(1 - \frac{2 M}{r})^{-1}
+\partial_{t}^{2} A_{r} 
+\nn \\
+\Rightarrow
+\quad
+L A_{r}
+-
+\frac{2}{r^{3}}
+(1 - \frac{2 M}{r})
+\partial_{r}
+\left(
+r^{2}
+A_{r}
+\right)
++
+\frac{2}{r^{2}}
+(1 - \frac{2 M}{r})
+A_{r}
++
+\partial_{r}
+\left(
+\frac{2 M}{r^{2}}
+\right)
+A_{r}
+\nn \\
++
+\frac{2}{r^{3}}
+(1 - \frac{2 M}{r})
+\partial_{r}
+\left(
+r^{2}
+A_{r}
+\right)
+-
+\frac{2 (1 - \frac{2 M}{r})}{r^{3} (1 + \frac{2 \xi^{2} M}{r^{3}})}
+\partial_{r}
+\left[
+r^{2}
+(1 + \frac{2 \xi^{2} M}{r^{3}})
+A_{r}
+\right]
++
+\frac{2 (1 - \frac{2 M}{r})}{r^{3} (1 + \frac{2 \xi^{2} M}{r^{3}})}
+\partial_{r}
+\left[
+r^{2}
+\frac{6 \xi^{2} M}{r^{3}}
+A_{r}
+\right]
+\nn \\
++
+\partial_{r}
+\left(
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(1 - \frac{2 M}{r})
+\partial_{r} A_{r}
+\right)
+=
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(1 - \frac{2 M}{r})^{-1}
+\partial_{t}^{2} A_{r} 
+\nn \\
+\Rightarrow
+\quad
+L A_{r}
+-
+\frac{2}{r^{2}}
+\partial_{r}
+\left[
+r
+(1 - \frac{2 M}{r})
+A_{r}
+\right]
++
+\frac{2 (1 - \frac{2 M}{r})}{r^{3} (1 + \frac{2 \xi^{2} M}{r^{3}})}
+\frac{2 \xi^{2} M}{r^{3}}
+\partial_{r}
+\left(
+r^{2}
+A_{r}
+\right)
++
+\frac{2 (1 - \frac{2 M}{r})}{r^{3} (1 + \frac{2 \xi^{2} M}{r^{3}})}
+\partial_{r}
+\left[
+r^{2}
+\frac{4 \xi^{2} M}{r^{3}}
+A_{r}
+\right]
+\nn \\
++
+\partial_{r}
+\left(
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(1 - \frac{2 M}{r})
+\partial_{r} A_{r}
+\right)
+=
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(1 - \frac{2 M}{r})^{-1}
+\partial_{t}^{2} A_{r} 
+\nn \\
+\Rightarrow
+\quad
+L A_{r}
+-
+\frac{2}{r^{2}}
+\partial_{r}
+\left[
+r
+(1 - \frac{2 M}{r})
+A_{r}
+\right]
+\nn \\
++
+\frac{2 (1 - \frac{2 M}{r})}{r^{3} (1 + \frac{2 \xi^{2} M}{r^{3}})}
+\left[
+r^{2}
+\frac{2 \xi^{2} M}{r^{3}}
+\partial_{r}
+A_{r}
++
+2
+r
+\frac{2 \xi^{2} M}{r^{3}}
+A_{r}
++
+r^{2}
+\frac{4 \xi^{2} M}{r^{3}}
+\partial_{r}
+A_{r}
+-
+\frac{4 \xi^{2} M}{r^{2}}
+A_{r}
+\right]
+\nn \\
++
+\partial_{r}
+\left(
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(1 - \frac{2 M}{r})
+\partial_{r} A_{r}
+\right)
+=
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(1 - \frac{2 M}{r})^{-1}
+\partial_{t}^{2} A_{r} 
+\nn \\
+\Rightarrow
+\quad
+L A_{r}
+-
+\frac{2}{r^{2}}
+\partial_{r}
+\left[
+r
+(1 - \frac{2 M}{r})
+A_{r}
+\right]
++
+\frac{2}{r}
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{ (1 + \frac{2 \xi^{2} M}{r^{3}})}
+\partial_{r}
+A_{r}
+\nn \\
++
+\partial_{r}
+\left(
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r} A_{r}
+\right)
+=
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(1 - \frac{2 M}{r})^{-1}
+\partial_{t}^{2} A_{r} 
+\nn \\
+\Rightarrow
+\quad
+L A_{r}
+-
+\frac{2}{r^{2}}
+\partial_{r}
+\left[
+r
+(1 - \frac{2 M}{r})
+A_{r}
+\right]
+\nn \\
++
+\frac{1}{r^{2}}
+\partial_{r}
+\left(
+r^{2}
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r} A_{r}
+\right)
+=
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})^{-1}}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{t}^{2} A_{r} 
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The equation for $A_{z}$
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+L A_{z}
++
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+(\partial_{r} A_{z} - \partial_{z} A_{r})
+-
+\frac{2 \bar{z} (1 + z \bar{z})}{r^{2}}
+\partial_{\bar{z}}
+A_{z}
+-
+\partial_{z}
+\nabla_{\mu}
+A^{\mu}
+\nn \\
+=
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{(1 + z \bar{z})^{2}}{2 r^{2}}
+\left[
+\partial_{z}^{2}A_{\bar{z}}
+-
+\partial_{z} \partial_{\bar{z}} A_{z}
++
+\frac{2 \bar{z}}{1 + z \bar{z}}
+(\partial_{z} A_{\bar{z}}
+-
+\partial_{\bar{z}} A_{z})
++
+\frac{2 r (1 - \frac{2 M}{r})}{(1 + z \bar{z})^{2}}
+(\partial_{z} A_{r}
+-
+\partial_{r} A_{z})
+\right]
+\nn \\
+\Rightarrow
+\quad
+\left(L
+-
+\frac{2 \bar{z} (1 + z \bar{z})}{r^{2}}
+\partial_{\bar{z}}
+\right)
+A_{z}
+=
+-
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+(\partial_{r} A_{z} - \partial_{z} A_{r})
+\nn \\
+-
+\frac{2 M}{r^{2}}
+\partial_{z}
+A_{r}
+-
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{z}
+\partial_{r}
+A_{r}
++
+\frac{1}{r}
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(\partial_{z} A_{r}
+-
+\partial_{r} A_{z})
+\nn \\
++
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{1}{2 r^{2}}
+\left[
+(1 + z \bar{z})^{2}
+\partial_{z}
+\left(
+\partial_{z}A_{\bar{z}}
+-
+\partial_{\bar{z}} A_{z}
+\right)
++
+2 \bar{z}
+(1 + z \bar{z})
+(\partial_{z} A_{\bar{z}}
+-
+\partial_{\bar{z}} A_{z})
+\right]
+\nn \\
+\Rightarrow
+\quad
+\left(L
+-
+\frac{2 \bar{z} (1 + z \bar{z})}{r^{2}}
+\partial_{\bar{z}}
+\right)
+A_{z}
+=
+-
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+(\partial_{r} A_{z} - \partial_{z} A_{r})
+\nn \\
+-
+\frac{2 M}{r^{2}}
+\partial_{z}
+A_{r}
+-
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{z}
+\partial_{r}
+A_{r}
++
+\frac{1}{r}
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(\partial_{z} A_{r}
+-
+\partial_{r} A_{z})
+\nn \\
++
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{1}{2 r^{2}}
+\partial_{z}
+\left[
+(1 + z \bar{z})^{2}
+\left(
+\partial_{z}A_{\bar{z}}
+-
+\partial_{\bar{z}} A_{z}
+\right)
+\right]
+\nn \\
+\Rightarrow
+\quad
+\left(L
+-
+\frac{2 \bar{z} (1 + z \bar{z})}{r^{2}}
+\partial_{\bar{z}}
+\right)
+A_{z}
+=
+-
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+\left[
+1
++
+\frac{\frac{3 \xi^{2} M}{r^{3}}}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right]
+\partial_{r} A_{z} 
+\nn \\
++
+\frac{2}{r}
+\left[
+(1 - \frac{3 M}{r})
++
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right]
+\partial_{z} A_{r}
+-
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{z}
+\partial_{r}
+A_{r}
+\nn \\
++
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{1}{2 r^{2}}
+\partial_{z}
+\left[
+(1 + z \bar{z})^{2}
+\left(
+\partial_{z}A_{\bar{z}}
+-
+\partial_{\bar{z}} A_{z}
+\right)
+\right]
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The equation for $A_{\bar{z}}$
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+L A_{\bar{z}}
++
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+(\partial_{r} A_{\bar{z}} - \partial_{\bar{z}} A_{r})
+-
+\frac{2 z (1 + z \bar{z})}{r^{2}}
+\partial_{z}
+A_{\bar{z}}
+-
+\partial_{\bar{z}}
+\nabla_{\mu}
+A^{\mu}
+\nn \\
+=
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{(1 + z \bar{z})^{2}}{2 r^{2}}
+\left[
+\partial_{\bar{z}}^{2}A_{z}
+-
+\partial_{\bar{z}} \partial_{z} A_{\bar{z}}
++
+\frac{2 z}{1 + z \bar{z}}
+(\partial_{\bar{z}} A_{z}
+-
+\partial_{z} A_{\bar{z}})
++
+\frac{2 r (1 - \frac{2 M}{r})}{(1 + z \bar{z})^{2}}
+(\partial_{\bar{z}} A_{r}
+-
+\partial_{r} A_{\bar{z}})
+\right]
+\nn \\
+\Rightarrow
+\quad
+\left(L
+-
+\frac{2 z (1 + z \bar{z})}{r^{2}}
+\partial_{z}
+\right)
+A_{\bar{z}}
+=
+-
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+(\partial_{r} A_{\bar{z}} - \partial_{\bar{z}} A_{r})
+\nn \\
+-
+\frac{2 M}{r^{2}}
+\partial_{\bar{z}}
+A_{r}
+-
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{\bar{z}}
+\partial_{r}
+A_{r}
++
+\frac{1}{r}
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+(\partial_{\bar{z}} A_{r}
+-
+\partial_{r} A_{\bar{z}})
+\nn \\
++
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{1}{2 r^{2}}
+\left[
+(1 + z \bar{z})^{2}
+\partial_{\bar{z}}
+\left(
+\partial_{\bar{z}}A_{z}
+-
+\partial_{z} A_{\bar{z}}
+\right)
++
+2 z
+(1 + z \bar{z})
+(\partial_{\bar{z}} A_{z}
+-
+\partial_{z} A_{\bar{z}})
+\right]
+\nn \\
+\Rightarrow
+\quad
+\left(L
+-
+\frac{2 z (1 + z \bar{z})}{r^{2}}
+\partial_{z}
+\right)
+A_{\bar{z}}
+=
+-
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+\left(
+1
++
+\frac{\frac{3 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right)
+\partial_{r} A_{\bar{z}}
+\nn \\
++
+\frac{2}{r}
+\left(
+(
+1
+- 
+\frac{3 M}{r})
++
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right)
+\partial_{\bar{z}} A_{r}
+-
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{\bar{z}}
+\partial_{r}
+A_{r}
+\nn \\
++
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{1}{2 r^{2}}
+\partial_{\bar{z}}
+\left[
+(1 + z \bar{z})^{2}
+\left(
+\partial_{\bar{z}}A_{z}
+-
+\partial_{z} A_{\bar{z}}
+\right)
+\right]
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The gauge fixed equations of motion are
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+L A_{r}
+-
+\frac{2}{r^{2}}
+\partial_{r}
+\left[
+r
+(1 - \frac{2 M}{r})
+A_{r}
+\right]
+\nn \\
++
+\frac{1}{r^{2}}
+\partial_{r}
+\left(
+r^{2}
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r} A_{r}
+\right)
+=
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})^{-1}}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{t}^{2} A_{r} 
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\left(L
+-
+\frac{2 \bar{z} (1 + z \bar{z})}{r^{2}}
+\partial_{\bar{z}}
+\right)
+A_{z}
+=
+-
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+\left[
+1
++
+\frac{\frac{3 \xi^{2} M}{r^{3}}}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right]
+\partial_{r} A_{z} 
+\nn \\
++
+\frac{2}{r}
+\left[
+(1 - \frac{3 M}{r})
++
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right]
+\partial_{z} A_{r}
+-
+2
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{z}
+\partial_{r}
+A_{r}
+\nn \\
++
+\frac{1}{r^{2}}
+\frac{\frac{3 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{z}
+\left[
+(1 + z \bar{z})^{2}
+\left(
+\partial_{z}A_{\bar{z}}
+-
+\partial_{\bar{z}} A_{z}
+\right)
+\right]
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\left(L
+-
+\frac{2 z (1 + z \bar{z})}{r^{2}}
+\partial_{z}
+\right)
+A_{\bar{z}}
+=
+-
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+\left[
+1
++
+\frac{\frac{3 \xi^{2} M}{r^{3}}}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right]
+\partial_{r} A_{\bar{z}} 
+\nn \\
++
+\frac{2}{r}
+\left[
+(1 - \frac{3 M}{r})
++
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right]
+\partial_{\bar{z}} A_{r}
+-
+2
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{\bar{z}}
+\partial_{r}
+A_{r}
+\nn \\
++
+\frac{1}{r^{2}}
+\frac{\frac{3 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{\bar{z}}
+\left[
+(1 + z \bar{z})^{2}
+\left(
+\partial_{\bar{z}} A_{z}
+-
+\partial_{z}A_{\bar{z}}
+\right)
+\right]
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+and the constraint equation is
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\frac{1}{(1 + \frac{2 \xi^{2} M}{r^{3}})}
+\partial_{r}
+\left[
+r^{2}
+(1 - \frac{4 \xi^{2} M}{r^{3}})
+A_{r}
+\right]
+=
+-\frac{(1 + z \bar{z})^{2}}{2 (1 - \frac{2 M}{r})}
+(\partial_{z} A_{\bar{z}} + \partial_{\bar{z}} A_{z})
+\end{gather}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\subsection{The First Solution}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+and suppose that $A_{r} = 0$, $A_{z} = \partial_{z} \Phi$ and $A_{\bar{z}} = - \partial_{\bar{z}} \Phi$. Then the $A_{z}$ equation becomes
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\left(L
+-
+\frac{2 \bar{z} (1 + z \bar{z})}{r^{2}}
+\partial_{\bar{z}}
+\right)
+\partial_{z}
+\Phi
+=
+-
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+\partial_{r} \partial_{z}
+\Phi
+\nn \\
+-
+\frac{1}{r}
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r} \partial_{z}\Phi
+-
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{1}{r^{2}}
+\partial_{z}
+\left[
+(1 + z \bar{z})^{2}
+\partial_{z}\partial_{\bar{z}}\Phi
+\right]
+\nn \\
+\Rightarrow
+\quad
+\partial_{z}
+\left[
+L
+\Phi
++
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+\partial_{r}
+\Phi
++
+\frac{1}{r}
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r} \Phi
++
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{(1 + z \bar{z})^{2}}{r^{2}}
+\partial_{z}\partial_{\bar{z}}\Phi
+\right]
+=0
+\nn \\
+\Rightarrow
+\quad
+L
+\Phi
++
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+\partial_{r}
+\Phi
++
+\frac{1}{r}
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r} \Phi
++
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{(1 + z \bar{z})^{2}}{r^{2}}
+\partial_{z}\partial_{\bar{z}}\Phi
+=0
+\label{FirstEquOne}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+(1 - \frac{2 M}{r})^{-1}
+\partial^{2}_{t}
+\Phi
+-
+\frac{1}{r^{2}}
+\partial_{r}
+\left(
+r^{2} (1 - \frac{2 M}{r})
+\partial_{r}
+\Phi
+\right)
+-
+\frac{(1 + z \bar{z})^{2}}{r^{2}}
+\partial_{z}\partial_{\bar{z}}\Phi
+\nn \\
++
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+\partial_{r}
+\Phi
++
+\frac{1}{r}
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r} \Phi
++
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{(1 + z \bar{z})^{2}}{r^{2}}
+\partial_{z}\partial_{\bar{z}}\Phi
+=0
+\nn \\
+\Rightarrow
+\quad
+(1 - \frac{2 M}{r})^{-1}
+\partial^{2}_{t}
+\Phi
+-
+\partial_{r}
+\left(
+(1 - \frac{2 M}{r})
+\partial_{r}
+\Phi
+\right)
++
+\frac{l (l + 1)}{r^{2}}
+\Phi
+\nn \\
++
+\frac{1}{r}
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r} \Phi
+-
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{l (l + 1)}{r^{2}}
+\Phi
+=0
+\nn \\
+\Rightarrow
+\quad
+\partial^{2}_{t}
+\Phi
+-
+(1 - \frac{2 M}{r})
+\partial_{r}
+\left(
+(1 - \frac{2 M}{r})
+\partial_{r}
+\Phi
+\right)
+\nn \\
++
+\frac{2}{r}
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})^{2} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r} \Phi
++
+\frac{l (l + 1)}{r^{2}}
+(1 - \frac{2 M}{r})
+\frac{1 - \frac{4  \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\Phi
+=0
+\nn \\
+\Rightarrow
+\quad
+\partial^{2}_{t}
+\Phi
+-
+\frac{1 - \frac{2 M}{r}}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r}
+\left(
+(1 - \frac{2 M}{r})
+(1 + \frac{2 \xi^{2} M}{r^{3}})
+\partial_{r}
+\Phi
+\right)
++
+\frac{l (l + 1)}{r^{2}}
+(1 - \frac{2 M}{r})
+\frac{1 - \frac{4  \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\Phi
+=0
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+We must check that this is consistent with the $A_{\bar{z}}$ equation:
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+-
+\left(L
+-
+\frac{2 z (1 + z \bar{z})}{r^{2}}
+\partial_{z}
+\right)
+\partial_{\bar{z}}
+\Phi
+=
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+\partial_{r} \partial_{\bar{z}}
+\Phi
+\nn \\
++
+\frac{1}{r}
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r} \partial_{\bar{z}}\Phi
++
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{1}{r^{2}}
+\partial_{\bar{z}}
+\left[
+(1 + z \bar{z})^{2}
+\partial_{z}\partial_{\bar{z}}\Phi
+\right]
+\nn \\
+\Rightarrow
+\quad
+\partial_{\bar{z}}
+\left[
+L
+\Phi
++
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+\partial_{r}
+\Phi
++
+\frac{1}{r}
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r} \Phi
++
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{(1 + z \bar{z})^{2}}{r^{2}}
+\partial_{z}\partial_{\bar{z}}\Phi
+\right]
+=0
+\nn \\
+\Rightarrow
+\quad
+L
+\Phi
++
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+\partial_{r}
+\Phi
++
+\frac{1}{r}
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r} \Phi
++
+\frac{\frac{6 \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{(1 + z \bar{z})^{2}}{r^{2}}
+\partial_{z}\partial_{\bar{z}}\Phi
+=0
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+This is consistent with (\ref{FirstEquOne})
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+
+
+
+
+
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\subsection{A Second Solution}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+This time let's suppose that $A_{z} = \partial_{z} \Psi$ and $A_{\bar{z}} = \partial_{\bar{z}} \Psi$. The constraint equation becomes
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\frac{1}{(1 + \frac{2 \xi^{2} M}{r^{3}})}
+\partial_{r}
+\left[
+r^{2}
+(1 - \frac{4 \xi^{2} M}{r^{3}})
+A_{r}
+\right]
+=
+-\frac{(1 + z \bar{z})^{2}}{(1 - \frac{2 M}{r})}
+\partial_{z} \partial_{\bar{z}} \Psi
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+If $\Psi \propto Y_{l}^{m}$ then the constraint becomes
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\partial_{r}
+\left[
+r^{2}
+(1 - \frac{4 \xi^{2} M}{r^{3}})
+A_{r}
+\right]
+=
+\frac{l (l +1) (1 + \frac{2 \xi^{2} M}{r^{3}})}{(1 - \frac{2 M}{r})} \Psi
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+This implies that 
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+A_{r} 
+=
+\frac{l (l +1) \Phi}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+,
+\qquad
+\Psi 
+=
+\frac{(1 - \frac{2 M}{r}) \partial_{r} \Phi}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\left(L
+-
+\frac{2 \bar{z} (1 + z \bar{z})}{r^{2}}
+\partial_{\bar{z}}
+\right)
+\partial_{z}
+\Psi
+=
+-
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+\left[
+1
++
+\frac{\frac{3 \xi^{2} M}{r^{3}}}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right]
+\partial_{r} 
+\partial_{z}
+\Psi
+\nn \\
++
+\frac{2}{r}
+\left[
+(1 - \frac{3 M}{r})
++
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right]
+\partial_{z} A_{r}
+-
+2
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{z}
+\partial_{r}
+A_{r}
+\nn \\
+\Rightarrow
+\quad
+\partial_{z}
+L
+\Psi
+=
+-
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+\left[
+1
++
+\frac{\frac{3 \xi^{2} M}{r^{3}}}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right]
+\partial_{r} 
+\partial_{z}
+\Psi
+\nn \\
++
+\frac{2}{r}
+\left[
+(1 - \frac{3 M}{r})
++
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right]
+\partial_{z} A_{r}
+-
+2
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{z}
+\partial_{r}
+A_{r}
+\nn \\
+\Rightarrow
+\quad
+L
+\Psi
+=
+-
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+\left[
+1
++
+\frac{\frac{3 \xi^{2} M}{r^{3}}}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right]
+\partial_{r} 
+\Psi
+\nn \\
++
+\frac{2}{r}
+\left[
+(1 - \frac{3 M}{r})
++
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right]
+A_{r}
+-
+2
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r}
+A_{r}
+\nn \\
+\Rightarrow
+\quad
+(1 - \frac{2 M}{r})^{-1}
+\partial^{2}_{t}
+\Psi
+-
+\frac{1}{r^{2}}
+\partial_{r}
+\left(
+r^{2} (1 - \frac{2 M}{r})
+\partial_{r}
+\Psi
+\right)
++
+\frac{l (l + 1)}{r^{2}}
+\Psi
+=
+-
+\frac{2}{r}
+(1 - \frac{2 M}{r})
+\left[
+1
++
+\frac{\frac{3 \xi^{2} M}{r^{3}}}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right]
+\partial_{r} 
+\Psi
+\nn \\
++
+\frac{2}{r}
+\left[
+(1 - \frac{3 M}{r})
++
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right]
+A_{r}
+-
+2
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r}
+A_{r}
+\nn \\
+\Rightarrow
+\quad
+(1 - \frac{2 M}{r})^{-1}
+\partial^{2}_{t}
+\Psi
+-
+\partial_{r}
+\left(
+(1 - \frac{2 M}{r})
+\partial_{r}
+\Psi
+\right)
++
+\frac{l (l + 1)}{r^{2}}
+\Psi
+=
+-
+\frac{2}{r}
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r} 
+\Psi
+\nn \\
++
+\frac{2}{r}
+\left[
+(1 - \frac{3 M}{r})
++
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right]
+A_{r}
+-
+2
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r}
+A_{r}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+(1 - \frac{2 M}{r})^{-1}
+\partial^{2}_{t}
+\frac{(1 - \frac{2 M}{r}) \partial_{r} \Phi}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+-
+\partial_{r}
+\left(
+(1 - \frac{2 M}{r})
+\partial_{r}
+\left(
+\frac{(1 - \frac{2 M}{r}) \partial_{r} \Phi}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right)
+\right)
+\nn \\
++
+\frac{l (l + 1)}{r^{2}}
+\frac{(1 - \frac{2 M}{r}) \partial_{r} \Phi}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+=
+-
+\frac{2}{r}
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r} 
+\left(
+\frac{(1 - \frac{2 M}{r}) \partial_{r} \Phi}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right)
+\nn \\
++
+\frac{2}{r}
+\left[
+(1 - \frac{3 M}{r})
++
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r}) }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right]
+\frac{l (l +1) \Phi}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+-
+2
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r}
+\left(
+\frac{l (l +1) \Phi}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+\right)
+\nn \\
+\Rightarrow
+\quad
+\partial^{2}_{t} \partial_{r} \Phi
+-
+(1 + \frac{2 \xi^{2} M}{r^{3}})
+\partial_{r}
+\left(
+(1 - \frac{2 M}{r})
+\partial_{r}
+\left(
+\frac{(1 - \frac{2 M}{r}) \partial_{r} \Phi}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right)
+\right)
+\nn \\
++
+\frac{l (l + 1)}{r^{2}}
+(1 - \frac{2 M}{r}) \partial_{r} \Phi
+=
+-
+\frac{2}{r}
+\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})
+\partial_{r} 
+\left(
+\frac{(1 - \frac{2 M}{r}) \partial_{r} \Phi}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right)
+\nn \\
++
+\frac{2}{r}
+\left[
+(1 - \frac{3 M}{r})
+(1 + \frac{2 \xi^{2} M}{r^{3}})
++
+\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})
+\right]
+\frac{l (l +1) \Phi}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+\nn \\
+-
+2
+\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})
+\partial_{r}
+\left(
+\frac{l (l +1) \Phi}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+\right)
+\nn \\
+\Rightarrow
+\quad
+\partial^{2}_{t} \partial_{r} \Phi
+-
+\partial_{r}
+\left(
+(1 - \frac{2 M}{r})
+\partial_{r}
+\left(
+(1 - \frac{2 M}{r}) \partial_{r} \Phi
+\right)
+\right)
++
+\frac{l (l + 1)}{r^{2}}
+(1 - \frac{2 M}{r}) \partial_{r} \Phi
+\nn \\
+-
+\frac{2}{r}
+(1 - \frac{3 M}{r})
+\frac{l (l +1) \Phi}{r^{2}}
+=
+(1 + \frac{2 \xi^{2} M}{r^{3}})
+\partial_{r}
+\left(
+(1 - \frac{2 M}{r})
+\partial_{r}
+\left(
+\frac{(1 - \frac{2 M}{r}) \partial_{r} \Phi}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right)
+\right)
+\nn \\
+-
+\partial_{r}
+\left(
+(1 - \frac{2 M}{r})
+\partial_{r}
+\left(
+(1 - \frac{2 M}{r}) \partial_{r} \Phi
+\right)
+\right)
+-
+\frac{2}{r}
+\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})
+\partial_{r} 
+\left(
+\frac{(1 - \frac{2 M}{r}) \partial_{r} \Phi}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\right)
+\nn \\
+-
+\frac{2}{r}
+(1 - \frac{3 M}{r})
+\frac{l (l +1) \Phi}{r^{2}}
++
+\frac{2}{r}
+(1 - \frac{3 M}{r})
+\frac{l (l +1) \Phi}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+\nn \\
++
+\frac{2}{r}
+\frac{\xi^{2} M}{r^{3}} (5 - \frac{12 M}{r})
+\frac{l (l +1) \Phi}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+-
+2
+\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})
+\partial_{r}
+\left(
+\frac{l (l +1) \Phi}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+\right)
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\partial^{2}_{t} \partial_{r} \Phi
+-
+\partial_{r}
+\left(
+(1 - \frac{2 M}{r})
+\partial_{r}
+\left(
+(1 - \frac{2 M}{r}) \partial_{r} \Phi
+\right)
+\right)
++
+l (l + 1)
+\partial_{r} \left( \frac{1}{r^{2}} (1 - \frac{2 M}{r}) \Phi\right)
+\nn \\
+=
+\partial_{r}
+\left(
+\frac{2}{r}
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})^{2}}{(1 + \frac{2 \xi^{2} M}{r^{3}})}
+\partial_{r} \Phi
+\right)
+-
+l ( l + 1)
+\partial_{r}
+\left(
+\frac{2}{r^{2}}
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{(1 -\frac{4 \xi^{2} M}{r^{3}})}
+\Phi
+\right)
+\nn \\
+\Rightarrow
+\quad
+\partial^{2}_{t} \Phi
+-
+(1 - \frac{2 M}{r})
+\partial_{r}
+\left(
+(1 - \frac{2 M}{r}) \partial_{r} \Phi
+\right)
++
+\frac{l (l + 1)}{r^{2}} (1 - \frac{2 M}{r}) \Phi
+\nn \\
+=
+\frac{2}{r}
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})^{2}}{(1 + \frac{2 \xi^{2} M}{r^{3}})}
+\partial_{r} \Phi
+-
+\frac{2 l ( l + 1)}{r^{2}}
+\frac{\frac{3 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{(1 -\frac{4 \xi^{2} M}{r^{3}})}
+\Phi
+\nn \\
+\Rightarrow
+\quad
+\partial^{2}_{t} \Phi
+-
+(1 - \frac{2 M}{r})
+(1 + \frac{2 \xi^{2} M}{r^{3}})
+\partial_{r}
+\left(
+\frac{1 - \frac{2 M}{r}}{1 + \frac{2 \xi^{2} M}{r^{3}}} \partial_{r} \Phi
+\right)
+=
+-
+\frac{l ( l + 1)}{r^{2}}
+\frac{1 + \frac{2 \xi^{2} M}{r^{3}}}{1 -\frac{4 \xi^{2} M}{r^{3}}}
+ (1 - \frac{2 M}{r})
+\Phi
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+But we have to check and make sure this is consistent with the $A_{r}$ equation:
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+(1 - \frac{2 M}{r})^{-1}
+\partial_{t}^{2}
+A_{r}
+-
+\frac{1}{r^{2}}
+\partial_{r}
+\left(
+r^{2}
+(1 - \frac{2 M}{r})
+\partial_{r}
+A_{r}
+\right)
++
+\frac{l (l + 1)}{r^{2}}
+A_{r}
+-
+\frac{2}{r^{2}}
+\partial_{r}
+\left[
+r
+(1 - \frac{2 M}{r})
+A_{r}
+\right]
+\nn \\
++
+\frac{1}{r^{2}}
+\partial_{r}
+\left(
+r^{2}
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r} A_{r}
+\right)
+=
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})^{-1}}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{t}^{2} A_{r} 
+\nn \\
+\Rightarrow
+\quad
+\frac{l (l + 1)}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+(1 - \frac{2 M}{r})^{-1}
+\partial_{t}^{2}
+\Phi
+-
+\frac{1}{r^{2}}
+\partial_{r}
+\left(
+r^{2}
+(1 - \frac{2 M}{r})
+\partial_{r}
+\left(
+\frac{l (l + 1) \Phi}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+\right)
+\right)
+\nn \\
++
+\frac{l (l + 1)}{r^{2}}
+\frac{l (l + 1) \Phi}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+-
+\frac{2}{r^{2}}
+\partial_{r}
+\left[
+r
+(1 - \frac{2 M}{r})
+\frac{l (l + 1) \Phi}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+\right]
+\nn \\
++
+\frac{1}{r^{2}}
+\partial_{r}
+\left(
+r^{2}
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r} 
+\left(
+\frac{l (l + 1) \Phi}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+\right)
+\right)
+=
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})^{-1}}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\frac{l (l + 1)}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+\partial_{t}^{2} \Phi
+\nn \\
+\Rightarrow
+\quad
+\frac{(1 - \frac{2 M}{r})^{-1}}{r^{2} (1 + \frac{2 \xi^{2} M}{r^{3}})}
+\partial_{t}^{2}
+\Phi
+-
+\frac{1}{r^{2}}
+\partial_{r}
+\left(
+r^{2}
+(1 - \frac{2 M}{r})
+\partial_{r}
+\left(
+\frac{ \Phi}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+\right)
+\right)
+\nn \\
++
+\frac{l (l + 1)}{r^{2}}
+\frac{ \Phi}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+-
+\frac{2}{r^{2}}
+\partial_{r}
+\left[
+r
+(1 - \frac{2 M}{r})
+\frac{\Phi}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+\right]
+\nn \\
++
+\frac{1}{r^{2}}
+\partial_{r}
+\left(
+r^{2}
+\frac{\frac{6 \xi^{2} M}{r^{3}} (1 - \frac{2 M}{r})}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r} 
+\left(
+\frac{\Phi}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+\right)
+\right)
+=
+0
+\nn \\
+\Rightarrow
+\quad
+\partial_{t}^{2}
+\Phi
+-
+(1 - \frac{2 M}{r})
+(1 + \frac{2 \xi^{2} M}{r^{3}})
+\partial_{r}
+\left(
+\frac{1 - \frac{2 M}{r}}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r}
+\Phi
+\right)
+=-
+\frac{l (l + 1)}{r^{2}}
+\frac{1 + \frac{2 \xi^{2} M}{r^{3}}}{1 - \frac{4 \xi^{2} M}{r^{3}}}
+(1 - \frac{2 M}{r})
+\Phi
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Yes! the equations are consistent
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\subsection{To Summarize}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+First Solution:
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+A_{\mu}
+=
+\left\{
+0,0,
+\partial_{z}\Phi_{1}
+,
+-\partial_{\bar{z}}
+\Phi_{1}
+\right\}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+where
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\partial^{2}_{t}
+\Phi_{1}
+-
+\frac{1 - \frac{2 M}{r}}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r}
+\left(
+(1 - \frac{2 M}{r})
+(1 + \frac{2 \xi^{2} M}{r^{3}})
+\partial_{r}
+\Phi_{1}
+\right)
+=
+-
+\frac{l (l + 1)}{r^{2}}
+(1 - \frac{2 M}{r})
+\frac{1 - \frac{4  \xi^{2} M}{r^{3}} }{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\Phi_{1}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The second solution:
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+A_{\mu}
+=
+\left\{
+0,\frac{l (l + 1) \Phi_{2}}{r^{2} (1 - \frac{4 \xi^{2} M}{r^{3}})}
+,
+\frac{1 - \frac{2 M}{r}}{1 + \frac{2 \xi^{2} M}{r^{3}} }
+\partial_{z}
+\partial_{r}
+\Phi_{2}
+,
+\frac{1 - \frac{2 M}{r}}{1 + \frac{2 \xi^{2} M}{r^{3}} }
+\partial_{\bar{z}}
+\partial_{r}
+\Phi_{2}
+\right\}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+where
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\partial_{t}^{2}
+\Phi_{2}
+-
+(1 - \frac{2 M}{r})
+(1 + \frac{2 \xi^{2} M}{r^{3}})
+\partial_{r}
+\left(
+\frac{1 - \frac{2 M}{r}}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\partial_{r}
+\Phi_{2}
+\right)
+=-
+\frac{l (l + 1)}{r^{2}}
+(1 - \frac{2 M}{r})
+\frac{1 + \frac{2 \xi^{2} M}{r^{3}}}{1 - \frac{4 \xi^{2} M}{r^{3}}}
+\Phi_{2}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\subsection{WKB Approximation}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Let $\Phi$ be either $\Phi_{1}$ and $\Phi_{2}$  
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\Phi(r,t)
+=
+A(r)
+e^{i \phi(r) - i \omega t}
+Y_{l}^{m}(\theta, \varphi)
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The general structure of the kinds of equations we want to solve is
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\partial_{t}^{2}
+\Phi
+-
+q(r)
+\frac{\partial}{\partial r}
+\left(
+p(r)
+\frac{\partial \Phi}{\partial r}
+\right)
+=
+-
+\frac{l (l +1)}{r^{2}}
+q(r) H(r)
+\Phi
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+In the case of $\Phi_{1}$
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+q(r)
+=
+\frac{1 - \frac{2 M}{r}}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+,
+\quad
+p(r)
+=
+(1 - \frac{2 M}{r})
+(1 + \frac{2 \xi^{2} M}{r^{3}})
+,
+\quad
+H(r)
+=
+1
+-
+\frac{4 \xi^{2} M}{r^{3}}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+In the case of $\Phi_{2}$
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+q(r)
+=
+(1 - \frac{2 M}{r})
+(1 + \frac{2 \xi^{2} M}{r^{3}})
+,
+\quad
+p(r)
+=
+\frac{1 - \frac{2 M}{r}}{1 + \frac{2 \xi^{2} M}{r^{3}}}
+,
+\quad
+H(r)
+=
+\frac{1}{1 - \frac{4 \xi^{2} M}{r^{3}}}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+No matter which equation we are talking about, if we substitute the ansatz into the general equation what we get is
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+-
+\omega^{2}
+A
+e^{i\phi}
+-
+q
+\partial_{r}
+\left[
+p
+(A' + i A \phi')
+e^{i \phi}
+\right]
+=
+-\frac{l (l +1)}{r^{2}}
+q H
+A
+e^{i \phi}
+\nn \\
+\Rightarrow
+\quad
+\omega^{2}
+A
++
+q
+\left[
+p'
+(A' + i A \phi')
++
+p
+(A'' + i A' \phi' + i A \phi'')
++
+i p
+(A' + i A \phi')
+\phi'
+\right]
+=
+\frac{l (l +1)}{r^{2}}
+q H
+A
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Assuming that $A$ and $\phi$ are real functions
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+A''
+-
+A \phi^{\prime 2}
++
+\frac{p'}{p} A'
+=
+\frac{l (l +1)}{r^{2}}
+\frac{H}{p} A
+-
+\frac{\omega^{2}}{q p}
+A
+\\
+A \phi''
++
+2 A' \phi'
++
+\frac{p'}{p} A \phi'
+=0
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\frac{1}{p}
+\frac{d}{dr}
+(p A')
+-
+A \phi^{\prime 2}
+=
+\left[
+\frac{l (l +1)}{r^{2}}
+\frac{H}{p}
+-
+\frac{\omega^{2}}{q p}
+\right]
+A
+,
+\quad
+\frac{d}{dr}
+(p A^{2} \phi')
+=0
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+If $\frac{d}{dr}( p A') \approx 0$ then
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+p A^{2} \phi'
+=
+C^{2}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+where $C$ is a constant
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+-
+A
+\left(
+\frac{C^{2}}{p A^{2}}
+\right)^{2}
+=
+\left[
+\frac{l (l +1)}{r^{2}}
+\frac{H}{p}
+-
+\frac{\omega^{2}}{q p}
+\right]
+A
+\quad
+\Rightarrow
+\quad
+\frac{C^{4}}{p}
+=
+\left[
+\frac{\omega^{2}}{q}
+-
+\frac{l (l +1)}{r^{2}}
+H
+\right]
+A^{4}
+\nn \\
+\Rightarrow
+\quad
+A
+=
+C
+\left(
+\frac{q/p}{\omega^{2}
+-
+\frac{l (l +1)}{r^{2}}
+q H}
+\right)^{1/4}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\phi'
+=
+\frac{C^{2}}{p A^{2}}
+=
+\frac{1}{p}
+\sqrt{
+\frac{p}{q}
+\left[
+\omega^{2}
+-
+\frac{l (l +1)}{r^{2}}
+q H
+\right]}
+=
+\frac{1}{\sqrt{q p}}
+\sqrt{
+\omega^{2}
+-
+\frac{l (l +1)}{r^{2}}
+q H}
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Putting this all together, for the $\Phi = \Phi_{1}$ case
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\Phi_{1}
+=
+C_{\omega l m }^{(1)}
+e^{- i \omega t}
+Y_{l}^{m}(\theta, \varphi)
+\left(
+\frac{q/p}{\omega^{2}
+-
+\frac{l (l +1)}{r^{2}}
+q H}
+\right)^{1/4}
+\exp\left[
+\pm i \int dr \frac{1}{\sqrt{q p}}
+\sqrt{
+\omega^{2}
+-
+\frac{l (l +1)}{r^{2}}
+q H} \right]
+\nn \\
+=
+\frac{C_{\omega l m }^{(1)}
+e^{- i \omega t}
+Y_{l}^{m}(\theta, \varphi)}{\sqrt{1 + \frac{2 \xi^{2} M}{r^{3}}}}
+\left(
+\omega^{2}
+-
+\frac{l (l +1)}{r^{2}}
+(1 - \frac{2 M}{r}) \frac{1 - \frac{4 \xi^{2} M}{r^{3}}}{1 + \frac{2 \xi^{2} M}{r^{3}}} 
+\right)^{-1/4}
+\nn \\
+\times
+\exp\left[
+\pm i \int dr \frac{1}{|1 - \frac{2 M}{r}|}
+\sqrt{
+\omega^{2}
+-
+\frac{l (l +1)}{r^{2}}
+(1 - \frac{2 M}{r}) \frac{1 - \frac{4 \xi^{2} M}{r^{3}}}{1 + \frac{2 \xi^{2} M}{r^{3}}} }\right]
+\end{gather}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+On the other hand, for the $\Phi = \Phi_{2}$ case
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{gather}
+\Phi_{2}
+=
+C_{\omega l m }^{(2)}
+e^{- i \omega t}
+Y_{l}^{m}(\theta, \varphi)
+\sqrt{1 + \frac{2 \xi^{2} M}{r^{3}}}
+\left(
+\omega^{2}
+-
+\frac{l (l +1)}{r^{2}}
+(1 - \frac{2 M}{r}) \frac{1 + \frac{2 \xi^{2} M}{r^{3}}}{1 - \frac{4 \xi^{2} M}{r^{3}}} 
+\right)^{-1/4}
+\nn \\
+\times
+\exp\left[
+\pm i \int dr \frac{1}{|1 - \frac{2 M}{r}|}
+\sqrt{
+\omega^{2}
+-
+\frac{l (l +1)}{r^{2}}
+(1 - \frac{2 M}{r}) \frac{1+ \frac{2 \xi^{2} M}{r^{3}}}{1 - \frac{4 \xi^{2} M}{r^{3}}} }\right]
+\end{gather}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\bibliographystyle{h-elsevier}
+%\bibliography{Neutrino-K-Essence}
+
+
+
+
+
+\end{document}
